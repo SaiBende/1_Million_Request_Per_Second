@@ -1,0 +1,9 @@
+build/
+cmake-build-debug/
+
+# OS specific
+.DS_Store
+
+# IDE specific
+.vscode/
+.idea/
