@@ -1,0 +1,20 @@
+autocannon -m GET \
+  --connections 20 --duration 20 --pipelining 2 --workers 6 \
+  "http://localhost:3000/simple"
+
+
+autocannon -m PATCH \
+  --connections 20 --duration 20 --pipelining 2 --workers 6 \
+  -H "Content-Type: application/json" \
+  -b '{"f oo1":"test","foo2":"test","foo3":"test","foo4":"test","foo5":"test","foo6":"test","foo7":"test","foo8":"test","foo9":"test","foo10":"test"}' \
+  "http://localhost:3000/update-something/123/john_doe?value1=abc&value2=xyz"
+
+
+autocannon -m POST \
+  --connections 20 --duration 20 --pipelining 2 --workers 6 \
+  "http://localhost:3000/code"
+
+
+autocannon -m GET \
+  --connections 20 --duration 20 --pipelining 2 --workers 6 \
+  "http://localhost:3000/code-fast"
